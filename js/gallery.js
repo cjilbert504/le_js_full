@@ -3,8 +3,12 @@ function activateGallery() {
     let mainImage = document.querySelector("#gallery-photo img")
 
     thumbnails.forEach(function(thumbnail) {
+
+        let newImageSrc = thumbnail.dataset.largeVersion;
+        let largeVersion = new Image();
+        largeVersion.src = newImageSrc;
+
         thumbnail.addEventListener("click", function() {
-            let newImageSrc = thumbnail.dataset.largeVersion;
             const currentClass = "current";
 
             mainImage.setAttribute("src", newImageSrc);
